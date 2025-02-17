@@ -1,0 +1,21 @@
+.hidden {
+    display: none;
+}
+
+#city-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#error-message {
+    color: red;
+    font-weight: bold;
+}

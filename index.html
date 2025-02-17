@@ -1,37 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Weather Forecast</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gradient-to-r from-blue-500 to-indigo-600 min-h-screen flex items-center justify-center text-white">
+<input type="text" id="city-input" placeholder="Enter city name..." />
+<button onclick="getWeather(document.getElementById('city-input').value)">Get Weather</button>
 
-    <div class="bg-white bg-opacity-10 backdrop-blur-lg p-6 rounded-lg shadow-lg w-full max-w-md text-center">
-        <h1 class="text-2xl font-bold mb-4">🌤 Live Weather Forecast</h1>
-        
-        <div class="flex items-center gap-2">
-            <input type="text" id="city" class="w-full p-2 text-black rounded-md focus:outline-none" placeholder="Enter City (e.g., Pune)">
-            <button onclick="getWeather()" class="bg-yellow-400 px-4 py-2 rounded-md font-semibold hover:bg-yellow-500 transition">
-                Search
-            </button>
-        </div>
+<button onclick="getLocation()">Use My Location</button>
 
-        <button onclick="getLocation()" class="mt-3 text-sm text-gray-300 hover:underline">📍 Use My Location</button>
+<p id="error-message" class="hidden"></p>
 
-        <div id="weather-info" class="mt-5 text-lg font-medium hidden">
-            <h2 class="text-xl font-semibold" id="location"></h2>
-            <p id="temperature"></p>
-            <p id="humidity"></p>
-            <p id="wind"></p>
-            <p id="weather-description" class="capitalize"></p>
-            <img id="weather-icon" class="w-20 mx-auto mt-2 hidden" alt="Weather Icon">
-        </div>
-
-        <p id="error-message" class="text-red-300 mt-3 hidden"></p>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<div id="weather-info" class="hidden">
+    <h2 id="location"></h2>
+    <img id="weather-icon" class="hidden" />
+    <p id="temperature"></p>
+    <p id="humidity"></p>
+    <p id="wind"></p>
+    <p id="weather-description"></p>
+</div>
