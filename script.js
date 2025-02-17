@@ -1,11 +1,11 @@
-const apiKey = "2c32aab8ef5ffee04428152bd3d653a1";  // Replace with your API Key
+const apiKey = "YOUR_OPENWEATHERMAP_API_KEY";  // Replace with your API Key
 
 async function getWeather(city = null, lat = null, lon = null) {
     let url = "";
-    
-    if (city) {
-        url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    } else if (lat && lon) {
+
+    if (city && city.trim() !== "") {  // Ensure city input is valid
+        url = `https://api.openweathermap.org/data/2.5/weather?q=${city.trim()}&appid=${apiKey}&units=metric`;
+    } else if (lat && lon) {  // If location is provided, use coordinates
         url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     } else {
         document.getElementById("error-message").innerText = "Please enter a city!";
